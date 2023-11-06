@@ -1,0 +1,68 @@
+@host = http://localhost:8000
+
+@coffee_shop_name = kat-caffe
+
+
+### List of coffee shops
+
+GET {{host}}/coffee-shop
+Accept: application/json
+
+GET {{host}}/coffee-shop/{{coffee_shop_name}}
+Accept: application/json
+
+### create coffee shop
+
+POST {{host}}/coffee-shop/{{coffee_shop_name}}
+Content-Type: application/json
+
+{
+    "name": {{coffee_shop_name}}
+    "latlong": [49.20929176568049, 16.613405344497814],
+    "address": {
+        "street": "Martinkova",
+        "number": "7",
+        "post": "602 00",
+        "city": "Brno-sever",
+
+    },
+    "web": "http://www.thecatcafe.cz/"
+}
+
+
+###edit coffee shop
+
+PUT {{host}}/coffee-shop/{{coffee_shop_name}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    
+    "latlong": [49.20929176568049, 16.613405344497814],
+    "address": {
+        "street": "Martinkova",
+        "number": "7",
+        "post": "602 00",
+        "city": "Brno-sever",
+
+    },
+    "web": "http://www.thecatcafe.cz/"
+}
+### delete coffee shop
+
+DELETE  {{host}}/coffee-shop/{{coffee_shop_name}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": {{coffee_shop_name}}
+    "latlong": [49.20929176568049, 16.613405344497814],
+    "address": {
+        "street": "Martinkova",
+        "number": "7",
+        "post": "602 00",
+        "city": "Brno-sever",
+
+    },
+    "web": "http://www.thecatcafe.cz/"
+}
